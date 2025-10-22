@@ -5,7 +5,7 @@ const MijozForma = ({ onAdd, editMijoz }) => {
     id: "",
     ism: "",
     familya: "",
-    telefon: "",
+    telefon: "+998 ",
     email: "",
     manzil: "",
     distibyutr: "",
