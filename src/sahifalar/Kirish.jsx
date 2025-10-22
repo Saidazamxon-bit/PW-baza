@@ -26,7 +26,7 @@ const Kirish = ({ onLogin }) => {
     boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
     backgroundColor: "#fff",
     textAlign: "center",
-    fontFamily: "sans-serif"
+    fontFamily: "sans-serif",
   };
 
   const inputStyle = {
@@ -36,7 +36,7 @@ const Kirish = ({ onLogin }) => {
     borderRadius: 6,
     border: "1px solid #ccc",
     fontSize: 14,
-    transition: "0.2s"
+    transition: "0.2s",
   };
 
   const btnStyle = {
@@ -48,34 +48,41 @@ const Kirish = ({ onLogin }) => {
     cursor: "pointer",
     width: "100%",
     fontSize: 14,
-    transition: "0.2s"
+    transition: "0.2s",
   };
-
-  const infoStyle = { marginTop: 14, fontSize: 13, color: "#555", textAlign:"left" };
 
   return (
     <div style={containerStyle}>
-      <h2 style={{ marginBottom: 20, color:"#333" }}>Admin kirish</h2>
-      <form onSubmit={submit} style={{ display: "grid", gap: 10 }}>
+      <h2 style={{ marginBottom: 20, color: "#333" }}>Admin kirish</h2>
+      <form
+        onSubmit={submit}
+        style={{ display: "grid", gap: 10 }}
+        autoComplete="on" // <-- BRAUZERGA SAQLASHGA RUXSAT
+      >
         <input
           type="text"
+          name="username" // <-- MUHIM: brauzer user nomini taniydi
           placeholder="Foydalanuvchi (user)"
           value={user}
           onChange={(e) => setUser(e.target.value)}
           required
           style={inputStyle}
+          autoComplete="username" // <-- BRAUZERGA USER MAYDONI
         />
         <input
           type="password"
+          name="password" // <-- MUHIM: parol uchun tanish nom
           placeholder="Parol (password)"
           value={pass}
           onChange={(e) => setPass(e.target.value)}
           required
           style={inputStyle}
+          autoComplete="current-password" // <-- BRAUZERGA PAROL MAYDONI
         />
-        <button type="submit" style={btnStyle}>Kirish</button>
+        <button type="submit" style={btnStyle}>
+          Kirish
+        </button>
       </form>
-      
     </div>
   );
 };
